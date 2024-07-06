@@ -13,3 +13,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: Construir Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - name: Docker Scout
+      uses: docker/scout-action@v1.10.0
+      with:
+          dockerhub-user: ${{ secrets.USER_DOCKER_HUB }}
+          dockerhub-pasword: ${{ secrets.PASSWORD_DOCKER_HUB }}
+          command: quickview,cved
+          sarif-file: docker_vuls.json
+      
