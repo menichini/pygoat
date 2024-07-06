@@ -19,6 +19,6 @@ jobs:
       with:
           dockerhub-user: ${{ secrets.USER_DOCKER_HUB }}
           dockerhub-pasword: ${{ secrets.PASSWORD_DOCKER_HUB }}
-          command: quickview,cved
+          command: quickview,cves
           sarif-file: docker_vuls.json
       
